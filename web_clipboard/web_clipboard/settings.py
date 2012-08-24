@@ -8,7 +8,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Xu Weidong', 'wdxu@telenav.cn'),
+    ('Xu Weidong', 'weidongxu84@hotmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -18,7 +18,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',   # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'web_clipboard',                # Or path to database file if using sqlite3.
         'USER': 'root',                         # Not used with sqlite3.
-        'PASSWORD': 'Telenav234',               # Not used with sqlite3.
+        'PASSWORD': 'root',                     # Not used with sqlite3.
         'HOST': '',                             # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                             # Set to empty string for default. Not used with sqlite3.
     }
