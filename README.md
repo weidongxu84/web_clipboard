@@ -1,4 +1,4 @@
 web_clipboard
 =============
 
-A very simple text clipboard web app
+A very simple shared text clipboard web application.
