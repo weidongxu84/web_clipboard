@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Clipboard</title>
+    <style type="text/css">
+    .clip_list {
+        background: white;
+        margin: 10pt;
+        border-style: solid;
+        border-width: 2pt;
+        border-color: gray;
+    }
+    .clip {
+        background: lightgray;
+        padding: 2pt;
+        margin: 1pt;
+        border-style: solid;
+        border-width: 2pt;
+        border-color: gray;
+    }
+    .clip_content {
+        margin: 2pt;
+        height: 40pt;
+        overflow: hidden;
+    }
+    .copy_clip_button {
+        background: white;
+        font-size: 8pt;
+        border-style: solid;
+        border-width: 1pt;
+        border-color: black;
+        position: relative;
+        width: 30pt;
+        float: right;
+        text-align: center;
+    }
+    .username {
+        font-size: 8pt;
+        position: relative;
+        right: 0pt;
+    }
+    </style>
+    <script type="text/javascript" src="../static/js/ZeroClipboard.js"></script>
+    <script type="text/javascript">
+    var clip = new ZeroClipboard.Client();
+    function onLoad() {
+        ZeroClipboard.setMoviePath('../static/js/ZeroClipboard10.swf');
+        clip.glue('copy_clip_button_placeholder');
+    }
+    function toggleShowFullclip(element) {
+        if (element.style.height == 'auto') {
+            element.style.height = '40pt';
+            element.style.minHeight = 'auto';
+        }
+        else {
+            element.style.height = 'auto';
+            element.style.minHeight = '40pt';
+        }
+    }
+    function setClip(element, text) {
+        clip.setText(text);
+        clip.reposition(element);
+    }
+    </script>
+</head>
+<body onload="onLoad();">
+    <div class="clip_list">
+        {% if clip_list %}
+            {% for clip in clip_list %}
+                <div class="clip">
+                    <button id="copy_clip_button" class="copy_clip_button" onmouseover="setClip(this, this.nextSibling.nextSibling.textContent);">Copy</button>
+                    <div id="clip_content" class="clip_content" onclick="toggleShowFullclip(this);"><pre>{{ clip.content_text }}</pre></div>
+                    <div class="username">
+                        {% if clip.user.username != "anonymous" %}
+                            {{ clip.user.username }}
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div>
+        <form action="add_clip/" method="post">{% csrf_token %}
+            {{ add_clip_form.as_p }}
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+    <button id="copy_clip_button_placeholder" class="copy_clip_button" style="visibility: hidden;">Copy</button>
+</body>
+</html>
