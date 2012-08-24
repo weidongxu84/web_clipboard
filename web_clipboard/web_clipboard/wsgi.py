@@ -16,7 +16,9 @@ framework.
 import os
 import site
 
-site.addsitedir('/home/wdxu/www/web_clipboard/env/lib/python2.7/site-packages')
+PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
+
+site.addsitedir(os.path.join(PROJECT_PATH, '../../env/lib/python2.7/site-packages'))
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "web_clipboard.settings")
 
