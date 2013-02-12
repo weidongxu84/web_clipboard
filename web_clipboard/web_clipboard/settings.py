@@ -8,7 +8,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('root', 'root'),
+    ('root', ''),
 )
 
 MANAGERS = ADMINS
@@ -125,6 +125,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'south',
+    'bootstrap_toolkit',
     'clipboard',
 )
 
