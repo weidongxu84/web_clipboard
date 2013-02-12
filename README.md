@@ -15,6 +15,7 @@ Command line for GNU Debian:
 **Configure site and database**
 
 Modify "web_clipboard/web_clipboard/settings.py", for "ADMINS" and "DATABASES" setting.
+
 Modify "web_clipboard/web_clipboard.conf", for site location.
 
 **Create database**
