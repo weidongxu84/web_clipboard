@@ -1,10 +1,10 @@
 Introduction
 ============
 
-A very simple shared text clipboard web application.
+A very simple clipboard web application for sharing text data.
 
-Install Guide
-=============
+Installation
+============
 
 **Install Apache, MySQL, mod-wsgi (Apache)**
 
@@ -31,6 +31,8 @@ Command line:
 **Synchronize database**
 
 Command line:
+
+> cd web_clipboard
 
 > ../env/bin/python manage.py syncdb
 
