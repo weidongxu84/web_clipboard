@@ -44,5 +44,8 @@ Link Apache conf file, then restart Apache.
 
 Command line:
 
+> cd web_clipboard
+
 > sudo ln -s web_clipboard.conf /etc/apache2/conf.d/web_clipboard.conf
+
 > sudo apache2ctl graceful
