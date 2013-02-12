@@ -8,7 +8,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Xu Weidong', ''),
+    ('root', 'root'),
 )
 
 MANAGERS = ADMINS

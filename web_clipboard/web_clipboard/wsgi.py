@@ -13,13 +13,14 @@ middleware here, or combine a Django application with an application of another
 framework.
 
 """
-import os
+import os, sys
 import site
 
 PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
 
 site.addsitedir(os.path.join(PROJECT_PATH, '../../env/lib/python2.7/site-packages'))
 
+sys.path.append(os.path.join(PROJECT_PATH, '..'))
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "web_clipboard.settings")
 
 # This application object is used by any WSGI server configured to use this
